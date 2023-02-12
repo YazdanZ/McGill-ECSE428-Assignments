@@ -1,6 +1,6 @@
 Feature: Rate Sellers
 
-    As a textbook buyer, I want to be able to rate sellers on the platform so that I can help other buyers make informed decisions.
+    As a student buyer, I want to be able to rate sellers on the platform so that I can help other buyers make informed decisions.
 
     Background:
         Given the following users exist:

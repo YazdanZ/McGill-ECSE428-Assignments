@@ -1,6 +1,6 @@
 Feature: Report Seller
 
-    As a buyer, I want to be able to report a seller if they violate the community guidelines, so that they can be reviewed by administrators and appropriate action can be taken.
+    As a student buyer, I want to be able to report a seller if they violate the community guidelines, so that they can be reviewed by administrators and appropriate action can be taken.
 
     Background:
         Given the following users exist:
