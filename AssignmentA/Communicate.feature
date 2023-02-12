@@ -1,6 +1,6 @@
 Feature: Communication between buyer and seller
 
-  As a student, I want to be able to communicate with the seller through the platform, so that I can ask questions or negotiate prices before making a purchase.
+  As a student buyer and seller, I want to be able to communicate with the seller or buyer through the platform, so that I can ask questions or negotiate prices before making a purchase.
 
   Background:
     Given the following users exist:
@@ -29,43 +29,42 @@ Feature: Communication between buyer and seller
 
     Given I am logged in as "jsmith" with password "jsmithp"
 
-  Scenario Outline: View previous conversations
+  Scenario: View previous conversations
     When I attempt to view my previous conversations
     Then I can see a list of my previous conversations with sellers and administrators
-    And I cannot see the conversations which I am not part of
-    Examples:
       | from   | to     | message                       |
       | jsmith | admin  | Hey your platform is awesome! |
       | admin  | jsmith | I know                        |
 
-  Scenario Outline: Ask seller a question
+    And I cannot see the conversations which I am not part of
+
+  Scenario: Ask seller a question
     When I attempt to ask the seller "jdoe" a question
     And I enter the question "Is it still available?"
     Then the seller "jdoe" receives my question
     And I am notified that my question was sent
-    And a new conversation is created from "jsmith" to "jdoe"
-    Examples:
+    And a new conversation is created from "jsmith" to "jdoe":
       | from   | to    | message                 |
       | admin  | jdoe  | Welcome to the platform |
       | jdoe   | admin | Thank you               |
       | jsmith | jdoe  | Is it still available?  |
 
-  Scenario Outline: Negotiate price with seller
+  Scenario: Negotiate price with seller
     When I attempt to negotiate price with seller for the book with title "Calculus 2"
     And I submit my proposed price "$25"
     Then the seller "jdoe" receives my proposed price
     And I am notified that my proposal was sent
-    Examples:
+    And the following entry shall be created:
       | title      | proposed price | proposer |
       | Calculus 2 | $25            | jsmith   |
 
-  Scenario Outline: Negotiate an invalid price with seller
+  Scenario: Negotiate an invalid price with seller
     When I attempt to negotiate price with seller for the book with title "Calculus 2"
     And I submit my proposed price "$0"
     Then the seller "jdoe" does not receive my proposed price
     Then I should see an error message that says "Please enter a valid proposed price"
 
-  Scenario Outline: Sent message contains banned words
+  Scenario: Sent message contains banned words
     When I attempt to negotiate price with seller for the book with title "Calculus 2"
     And I enter a message containing banned words like "f**k" or "sh*t"
     Then I should see an error message that says "Your message contains one or more banned words. Please check our community guidelines for harassement."
