@@ -9,6 +9,7 @@ Feature: Rate Sellers
             | jdoe     | jdoepass | student seller |
             | jsmith   | jsmithp  | student buyer  |
             | chen     | chen21   | student seller |
+            | y        | y12      | student buyer  |
 
         And  the following listings exist:
             | Title                        | Author       | Condition  | Price | Seller Username |
@@ -19,10 +20,11 @@ Feature: Rate Sellers
             | "Introduction to Psychology" | "Atkinson"   | "Good"     | $25   | "jsmith"        |
             | "The Great Gatsby"           | "Fitzgerald" | "Like new" | $15   | "jdoe"          |
             | "Organic Chemistry"          | "Klein"      | "Fair"     | $10   | "awang"         |
+        And the following ratings/reviws exist:
+            | Rater | Seller | rating score | review comment |
+            | y     | chen   | 3            | Rude           |
 
-        And the following payment histories exist:
-            | Title             | Payment Type | Price | Date       | Buyer  | Seller | Payment Info |
-            | Organic Chemistry | paypal       | $10   | 01-01-2002 | jsmith | jdoe   | xxxxx        |
+
         Given I am logged in as a user "jsmith" with password "jsmithp"
 
     Scenario: Successfully rate a seller
@@ -32,6 +34,13 @@ Feature: Rate Sellers
         And my rating history shall be updated:
             | Rater  | Seller | rating score | review comment |
             | jsmith | jdoe   | 3            | Slow shipping  |
+
+    Scenario: View seller ratings:
+        When I attempt to view the ratings for seller "chen21"
+        Then I shall see reviews given to her by any user:
+            | Rater | Seller | rating score | review comment |
+            | y     | chen   | 3            | Rude           |
+
 
     Scenario: Attempt to rate a seller without a rating score
         When I attempt to rate a seller "jdoe" I have brought the textbok "Organic Chemistry" from.

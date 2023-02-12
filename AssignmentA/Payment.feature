@@ -65,17 +65,4 @@ Feature: Payment System
     And the item should still be marked as "for sale"
     And no payment should be added to the system
 
-  Scenario: Payment Dispute
-    Given I have made a payment for textbook with title "Organic Chemistry"
-    And there is a dispute over the item received
-    When I open a dispute resolution case
-    Then a dispute is created:
-      | Title             | Buyer  | Seller | reason            |
-      | Organic Chemistry | jsmith | awang  | false advertising |
-    Then the payment should be put on hold:
-      | Title             | Payment Type | Price | Date       | Buyer  | Seller | status |
-      | Organic Chemistry | paypal       | $10   | 01-01-2002 | jsmith | awang  | Onhold |
-
-    And the seller should be notified
-    And the administrator shall be notified for review
-    And I should receive updates on the resolution status
+ 
