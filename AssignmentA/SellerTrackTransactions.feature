@@ -21,9 +21,8 @@ Feature: Track past transactions
             | "C++ Programming"        | "Stroustrup" | "New"      | $60   |
 
         When I make a request to track my past transactions
-        Then I shall get a list of all my past transaction to date
+        Then I shall get a list of all my past transaction to date:
 
-        Examples:
             | Title                        | Price | Date              | Type      |
             | "Introduction to Psychology" | $30   | 20-June-2022      | Sold      |
             | "The Great Gatsby"           | $20   | 04-September-2022 | Sold      |

@@ -25,10 +25,9 @@ Feature: View detailed book information
     Scenario: View detailed description of a book successfully
         Given I am on the search result page
         When I make a request to view details of the book "Calculus 2"
-        Then I shall see all the details of the book
+        Then I shall see all the details of the book:
 
 
-        Examples:
             | Title        | Author    | Condition | Price | Seller Username |
             | "Calculus 2" | "Stewart" | "Good"    | $30   | "jdoe"          |
 

@@ -30,8 +30,6 @@ Feature: Filter search by seller
         And I click the Search button
         Then I shall get a refined version of the previous search
         And I shall see the books by the seller I have specified
-
-        Examples:
             | Title              | Author       | Condition  | Price | Seller Username |
             | "Calculus 2"       | "Stewart"    | "Good"     | $30   | "jdoe"          |
             | "Biology 101"      | "Johnson"    | "Fair"     | $20   | "jdoe"          |

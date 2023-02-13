@@ -14,7 +14,7 @@ Feature: Filter search
             | "The Great Gatsby"           | "Fitzgerald" | "Like new" | $15   | "jdoe"          |
             | "Organic Chemistry"          | "Klein"      | "Fair"     | $10   | "awang"         |
 
-    Scenario: Successful filter
+    Scenario Outline: Successful filter
         Given I am on the search result page
         When I specify the author of the book as "Stewart"
         And I make a search request

@@ -13,16 +13,14 @@ Feature: Promote User
 
     Scenario: Administrator promotes a user to admin
         When I promote user "jdoe" to admin
-        Then user "jdoe" with password "jdoepass", role "student seller", and status "normal" should have the role "administrator"
-        Examples:
+        Then user "jdoe" with password "jdoepass", role "student seller", and status "normal" should have the role "administrator":
             | username | password | role          | status |
             | jdoe     | jdoepass | administrator | normal |
 
     Scenario: Administrator attempts to promote a banned user to admin
         When I promote user "jsmith" to admin
         Then user "jsmith" should keep the role "student buyer"
-        And I shall see the error "cannot promote a banned user to administrator"
-        Examples:
+        And I shall see the error "cannot promote a banned user to administrator":
             | username | password | role          | status |
             | jsmith   | jsmithp  | student buyer | banned |
 

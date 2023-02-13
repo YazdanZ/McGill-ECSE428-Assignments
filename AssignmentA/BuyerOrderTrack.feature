@@ -22,9 +22,7 @@ Feature: Track Order
             | "Organic Chemistry"          | "Klein"      |
 
         When I make a track orders request
-        Then I shall get a list of my orders with the status
-
-        Examples:
+        Then I shall get a list of my orders with the status:
             | Title                        | Author       | Status     |
             | "Introduction to Psychology" | "Atkinson"   | Delivered  |
             | "The Great Gatsby"           | "Fitzgerald" | In transit |

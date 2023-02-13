@@ -18,9 +18,8 @@ Feature: Trending books
 
     Scenario: View trending books
         When I visit the trending books section
-        Then I shall see a list of the most popular books ranked in different categories with popularity statistics
+        Then I shall see a list of the most popular books ranked in different categories with popularity statistics:
 
-        Examples:
 
             | Title                        | Author       | Category    | Price | Popularity                          |
             | "Calculus 2"                 | "Stewart"    | Science     | $30   | Top 10 this week in North America   |
@@ -35,9 +34,8 @@ Feature: Trending books
     Scenario: View trending books by category
         When I visit the trending books section
         And select a "Science" as category from the drop-down menu
-        Then I shall see a list of the most popular books ranked in "Science" category with popularity statistics
+        Then I shall see a list of the most popular books ranked in "Science" category with popularity statistics:
 
-        Examples:
 
             | Title               | Author    | Category | Price | Popularity                        |
             | "Calculus 2"        | "Stewart" | Science  | $30   | Top 10 this week in North America |
