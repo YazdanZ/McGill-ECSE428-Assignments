@@ -22,7 +22,7 @@ Feature: View detailed book information
         And I am logged in as "jsmith"
 
 
-    Scenario Outline: View detailed description of a book successfully
+    Scenario: View detailed description of a book successfully
         Given I am on the search result page
         When I make a request to view details of the book "Calculus 2"
         Then I shall see all the details of the book
@@ -32,7 +32,7 @@ Feature: View detailed book information
             | Title        | Author    | Condition | Price | Seller Username |
             | "Calculus 2" | "Stewart" | "Good"    | $30   | "jdoe"          |
 
-    Scenario Outline: View detailed description of a book not successful
+    Scenario: View detailed description of a book not successful
         Given I am on the search result page
         When I make a request to view details of the book "Calculus 2"
         And the book has been sold out in the background to another buyer

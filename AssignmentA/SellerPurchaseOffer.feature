@@ -34,7 +34,7 @@ Feature: Compare offers
         And there are no offers made for the book
         Then I shall see a message stating "No offers have been made yet for the listing"
 
-    Scenario: Erro - System policy violated
+    Scenario: Error - System policy violated
         When I query for all the offers for "Calculus 2" book
         And the admin has removed the book from the system due to policy violation
         Then I shall see a message stating "Listing has been removed by admin because it does not comply with system policy"

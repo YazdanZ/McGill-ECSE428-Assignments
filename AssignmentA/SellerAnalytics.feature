@@ -12,7 +12,7 @@ Feature: Seller Analytics
             | Organic Chemistry  | paypal       | $10   | 01-01-2002 | jsmith | jdoe   | xxxxx        |
             | 100 chess endhames | cash         | $20   | 01-3-2023  | jsmith | jdoe   | xxaxxx       |
 
-    Scenario Outline: View sales performance
+    Scenario: View sales performance
         When I attempt to view my sales performance and analytics
         Then I should see sold <total_books_sold> textbooks, and earned $<total_earnings> in total revenue
         And I shall see a breakdown of sales by year:

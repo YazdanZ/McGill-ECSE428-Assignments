@@ -45,7 +45,7 @@ Feature: Trade textbooks with other users
             | The myth of sisyphus | 4th     | Camus  | anna karenina | chen   |
         And the number of existing listings in the system is "2"
 
-    Scenario Outline: student responds to a trade listing
+    Scenario: student responds to a trade listing
         When I respond to the trade listing for "<want_title>" and "<offer_title>"
         Then the trade request is sent successfully to the user "chen" listing the trade
 
@@ -54,7 +54,7 @@ Feature: Trade textbooks with other users
             | The stranger         | War and Peace |
             | The myth of sisyphus | anna karenina |
 
-    Scenario Outline: student receives a trade request
+    Scenario: student receives a trade request
         Given user "chen" with password "chen21" is logged in
         When user "chen" views the trade requests for "<offer_title>" with <want_title>
         Then user "chen" can approve or deny the trade request

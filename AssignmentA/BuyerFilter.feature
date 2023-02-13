@@ -14,10 +14,10 @@ Feature: Filter search
             | "The Great Gatsby"           | "Fitzgerald" | "Like new" | $15   | "jdoe"          |
             | "Organic Chemistry"          | "Klein"      | "Fair"     | $10   | "awang"         |
 
-    Scenario Outline: Successful filter
+    Scenario: Successful filter
         Given I am on the search result page
         When I specify the author of the book as "Stewart"
-        And I click the Search button
+        And I make a search request
         Then I shall get a refined version of the previous search
         And I shall see the books of the author I have specified
 
@@ -26,13 +26,13 @@ Feature: Filter search
             | "Calculus 2" | "Stewart" | "Good"    | $30   | "jdoe"          |
 
 
-    Scenario Outline: No item matches filter (alternate story)
+    Scenario: No item matches filter (alternate story)
         Given I am on the search result page
         When I specify the author of the book as "J.K. Rowling"
         And I make a search request
         Then I shall see the error "Items of the specified author does not exist"
 
-    Scenario Outline: Error in filtering
+    Scenario: Error in filtering
         Given I am on the search result page
         When I specify the price of the book to be "-$30"
         And I make a search request

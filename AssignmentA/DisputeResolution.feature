@@ -55,7 +55,7 @@ Feature: Dispute Resolution
     And the administrator(s) shall be notified
 
 
-  Scenario Outline: Review evidence and make a decision
+  Scenario: Review evidence and make a decision
     Given I am an administrator logged in with username "admin" and password "admin123"
     When both the buyer and seller have provided evidence
     Then I can review the edispute and evidence and make a decision

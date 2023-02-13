@@ -21,11 +21,11 @@ Feature: List textbook for sale
             | "Organic Chemistry"          | "Klein"      | "Fair"     | $10   | "awang"         |
         And I am logged in the system as "himel"
 
-    Scenario Outline: Successful listing
+    Scenario: Successful listing
         When I fill in the book information in order to submit it with title "Harry Potter", author "J.K. Rowling", condition "Good", price "$25"
         And I submit the listing
         And I check all the listing in the system
-        Then I should see my listing in the system
+        Then I shall see my listing in the system
 
         Examples:
             | Title                        | Author         | Condition  | Price | Seller Username |
@@ -38,14 +38,14 @@ Feature: List textbook for sale
             | "Organic Chemistry"          | "Klein"        | "Fair"     | $10   | "awang"         |
             | "Harry Potter"               | "J.K. Rowling" | "Good"     | $25   | "himel"         |
 
-    Scenario Outline: Unsuccessful listing
+    Scenario: Unsuccessful listing
         When I fill in the book information in order to submit it with title "Harry Potter", author "", condition "Good", price "$25"
         And I submit the listing
         Then I shall see the error "Author cannot be empty"
         And the listing in the system shall not be updated
 
 
-    Scenario Outline: Error in listing
+    Scenario: Error in listing
         When I fill in the book information in order to submit it with title "Harry Potter", author "J.K. Rowling", condition "Good", price "-$25"
         And I submit the listing
         Then I shall see the error "Invalid price value"

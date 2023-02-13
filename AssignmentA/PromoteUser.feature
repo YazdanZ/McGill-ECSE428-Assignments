@@ -11,14 +11,14 @@ Feature: Promote User
             | jsmith   | jsmithp   | student buyer  | banned |
         And  I am logged in as "admin" with password "admin123"
 
-    Scenario Outline: Administrator promotes a user to admin
+    Scenario: Administrator promotes a user to admin
         When I promote user "jdoe" to admin
         Then user "jdoe" with password "jdoepass", role "student seller", and status "normal" should have the role "administrator"
         Examples:
             | username | password | role          | status |
             | jdoe     | jdoepass | administrator | normal |
 
-    Scenario Outline: Administrator attempts to promote a banned user to admin
+    Scenario: Administrator attempts to promote a banned user to admin
         When I promote user "jsmith" to admin
         Then user "jsmith" should keep the role "student buyer"
         And I shall see the error "cannot promote a banned user to administrator"
@@ -27,7 +27,7 @@ Feature: Promote User
             | jsmith   | jsmithp  | student buyer | banned |
 
 
-    Scenario Outline: Administrator attempts to an admin to administrator
+    Scenario: Administrator attempts to an admin to administrator
         When I promote user "admin1" to admin
         And I shall see the error "cannot promote a administrator to administrator"
 

@@ -14,7 +14,7 @@ Feature: Track Order
 
 
 
-    Scenario Outline: Successfully tracking orders
+    Scenario: Successfully tracking orders
         Given the following books that are ordered by the logged in user:
             | Title                        | Author       |
             | "Introduction to Psychology" | "Atkinson"   |
@@ -31,7 +31,7 @@ Feature: Track Order
             | "Organic Chemistry"          | "Klein"      | Cancelled  |
 
 
-    Scenario Outline: Tracking orders unsuccessful
+    Scenario: Tracking orders unsuccessful
         Given the user has no orders
         When I make a track orders request
         Then I shall see an error "No past orders"
