@@ -59,8 +59,7 @@ Feature: Dispute Resolution
     Given I am an administrator logged in with username "admin" and password "admin123"
     When both the buyer and seller have provided evidence
     Then I can review the edispute and evidence and make a decision
-    And update the dispute decision
-    Examples:
+    And update the dispute decision:
       | Evidence   | Decision     |
       | Clear      | Buyer refund |
       | Unclear    | Further info |

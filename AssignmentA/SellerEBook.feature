@@ -29,9 +29,8 @@ Feature: List E-books
         When I fill in the book information in order to submit a new book in the system with title "Harry Potter", author "J.K. Rowling", condition "Good", price "$25", available as e-book "Yes"
         And I submit the listing
         And I check all the listing in the system
-        Then I shall see my listing with e-book in the system
+        Then I shall see my listing with e-book in the system:
 
-        Examples:
             | Title                        | Author         | Condition  | Price | Seller Username | Available as e-book |
             | "Calculus 2"                 | "Stewart"      | "Good"     | $30   | "jdoe"          | Yes                 |
             | "Introduction to Python"     | "Van Rossum"   | "Like new" | $50   | "jsmith"        | No                  |
@@ -48,9 +47,8 @@ Feature: List E-books
         When I attempt to update an existing listing in the system with title "Harry Potter", change available as e-book option from "No" to "Yes"
         And I submit the updated listing
         And I check all the listing in the system
-        Then I shall see my listing with e-book in the system
+        Then I shall see my listing with e-book in the system:
 
-        Examples:
             | Title                        | Author         | Condition  | Price | Seller Username | Available as e-book |
             | "Calculus 2"                 | "Stewart"      | "Good"     | $30   | "jdoe"          | Yes                 |
             | "Introduction to Python"     | "Van Rossum"   | "Like new" | $50   | "jsmith"        | No                  |
@@ -67,9 +65,8 @@ Feature: List E-books
         And I submit the updated listing
         And the system is undergoing storage maintenance
         Then I shall see an error message stating "System undergoing storage maintenance - upload failed"
-        And the existing listing is not updated
+        And the existing listing is not updated:
 
-        Examples:
             | Title                        | Author         | Condition  | Price | Seller Username | Available as e-book |
             | "Calculus 2"                 | "Stewart"      | "Good"     | $30   | "jdoe"          | Yes                 |
             | "Introduction to Python"     | "Van Rossum"   | "Like new" | $50   | "jsmith"        | No                  |

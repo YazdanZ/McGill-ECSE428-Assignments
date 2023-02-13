@@ -47,9 +47,8 @@ Feature: Trade textbooks with other users
 
     Scenario: student responds to a trade listing
         When I respond to the trade listing for "<want_title>" and "<offer_title>"
-        Then the trade request is sent successfully to the user "chen" listing the trade
+        Then the trade request is sent successfully to the user "chen" listing the trade:
 
-        Examples:
             | want_title           | offer_title   |
             | The stranger         | War and Peace |
             | The myth of sisyphus | anna karenina |
@@ -57,8 +56,7 @@ Feature: Trade textbooks with other users
     Scenario: student receives a trade request
         Given user "chen" with password "chen21" is logged in
         When user "chen" views the trade requests for "<offer_title>" with <want_title>
-        Then user "chen" can approve or deny the trade request
-        Examples:
+        Then user "chen" can approve or deny the trade request:
             | offer_title          | want_title    | status  |
             | The stranger         | War and Peace | pending |
             | The myth of sisyphus | anna karenina | pending |
