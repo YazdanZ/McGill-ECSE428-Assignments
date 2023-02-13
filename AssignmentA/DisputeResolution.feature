@@ -1,6 +1,7 @@
 Feature: Dispute Resolution
 
-    As a user, I want to be able to open disputes with other users related to textbook transactions, so that I can ensure a fair and satisfactory outcome.
+  As a user, I want to be able to open disputes with other users related to textbook transactions, so that I can ensure a fair and satisfactory outcome.
+  Background:
 
     Given the following users exist:
       | username | password | role           |
@@ -8,7 +9,7 @@ Feature: Dispute Resolution
       | jdoe     | jdoepass | student seller |
       | jsmith   | jsmithp  | student buyer  |
 
-    And  the following listings exist:
+    And the following listings exist:
       | Title                        | Author       | Condition  | Price | Seller Username |
       | "Calculus 2"                 | "Stewart"    | "Good"     | $30   | "jdoe"          |
       | "Introduction to Python"     | "Van Rossum" | "Like new" | $50   | "jdoe"          |
@@ -22,7 +23,7 @@ Feature: Dispute Resolution
       | Title             | Payment Type | Price | Date       | Buyer  | Seller | Payment Info |
       | Organic Chemistry | paypal       | $10   | 01-01-2002 | jsmith | jdoe   | xxxxx        |
 
-    Given I am logged in as a user "jsmith" with password "jsmithp"
+    And I am logged in as a user "jsmith" with password "jsmithp"
 
   Scenario: Initiate Dispute
     Given I have made a payment for textbook with title "Organic Chemistry" to the seller "awang"
