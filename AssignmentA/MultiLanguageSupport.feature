@@ -1,6 +1,6 @@
 Feature: Multi-Language Support
 
-    As a buyer in the system, I want to be able to select my preferred language so that I can easily navigate the platform comfortably.
+    As a user in the system, I want to be able to select my preferred language so that I can easily navigate the platform comfortably.
 
 
     Background:
@@ -15,7 +15,7 @@ Feature: Multi-Language Support
         And I am logged in as a user "jsmith" with password "jsmith"
 
 
-    Scenario: Buyer selects a preferred language
+    Scenario: User selects a preferred language
         When I navigate to the settings page
         And I select a preferred language from the language selection dropdown
         Then the system shall be displayed the selected language and the book choices in the system adapt accordingly

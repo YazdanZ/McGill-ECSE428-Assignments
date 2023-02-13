@@ -1,4 +1,4 @@
-Feature: Book suggestion
+Feature: Book recommendation
 
     As a buyer in the system, I want to be able to see recommendation based on my purchase history, so that I can buy books other than the ones that I am aware of.
 

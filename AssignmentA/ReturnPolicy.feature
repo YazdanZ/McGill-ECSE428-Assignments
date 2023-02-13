@@ -1,6 +1,6 @@
 Feature: Return Policy
 
-    As a user in the system, I want to be able to initiate a return if I am not satisfied with my purchase so that I can ensure I am getting the right value for money.
+    As a buyer in the system, I want to be able to initiate a return if I am not satisfied with my purchase so that I can ensure I am getting the right value for money.
 
     Background:
         Given the following users exist:
@@ -11,7 +11,7 @@ Feature: Return Policy
             | jdoe     | jdoep    | student buyer  |
             | chen     | chen21   | student seller |
 
-        And I am logged in as a user "chen" with password "chen21"
+        And I am logged in as a user "jdoe" with password "jdoep"
 
 
     Scenario: Successful return request

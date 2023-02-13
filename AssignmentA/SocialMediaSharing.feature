@@ -1,4 +1,4 @@
-Feature: Social Sharing
+Feature: Social media sharing
 
     As a user in the system, I want to be able to share the textbook exchange platform with my friends so that I can help them get a good resource of books.
 
